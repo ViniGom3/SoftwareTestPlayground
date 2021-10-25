@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/roman-to-integer/
-const romanToInt = function (s) {
-  try {
+module.exports = {
+  // https://leetcode.com/problems/roman-to-integer/
+  romanToInt: function (s) {
     if (typeof s === "number" || s.length === 0) {
       return "VALOR INVALIDO";
     }
@@ -26,9 +26,34 @@ const romanToInt = function (s) {
     let response;
     isNaN(resultado) ? (response = "VALOR INVALIDO") : (response = resultado);
     return response;
-  } catch (error) {
-    console.error(error);
-  }
-};
+  },
+  // https://leetcode.com/problems/shuffle-the-array/
+  shuffle: function (nums, n) {
+    if (!Array.isArray(nums)) return "VALOR INVALIDO";
+    const array = nums.filter((item) => item);
+    if (array.length === 0) return "VALOR INVALIDO";
+    if (array.length !== 2 * n) return "VALOR INVALIDO";
+    if (array.length < n) return "VALOR INVALIDO";
+    if (n > 500) return "VALOR INVALIDO";
+    if (n === 0) return "VALOR INVALIDO";
+    if (n === 1) return array;
+    if (n === array.length) return array;
 
-module.exports = romanToInt;
+    const resultado = [];
+    for (let i = 0; i < n; i++) {
+      resultado.push(array[i]);
+      resultado.push(array[i + n]);
+    }
+    return resultado;
+  },
+  // https://leetcode.com/problems/jewels-and-stones/
+  numJewelsInStones: function (J, S) {
+    const resultado = [];
+    for (let i = 0; i < S.length; i++) {
+      if (J.includes(S[i])) {
+        resultado.push(S[i]);
+      }
+    }
+    return resultado.length;
+  },
+};
