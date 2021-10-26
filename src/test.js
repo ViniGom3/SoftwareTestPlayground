@@ -178,3 +178,89 @@ describe("shuffle()", () => {
     expect(shuffle([null, null], 1)).toBe("VALOR INVALIDO");
   });
 });
+
+describe("numJewelsInStones()", () => {
+  // CDT 1: [1,5], 1, 'VALOR INVALIDO';
+  // CDT 2: [1,2], 2, 'VALOR INVALIDO'
+  // CDT 3: { L: 1, U: 2, C: 3, A: 4 }, 'A', 'VALOR INVALIDO';
+  // CDT 4: null, null, 'VALOR INVALIDO';
+  // CDT 5: undefined, undefined, 'VALOR INVALIDO';
+  // CDT 6: 'aa', 'AAaaAA', 'VALOR INVALIDO';
+  // CDT 7: 'zz', 'ZZzzz', 'VALOR INVALIDO';
+  // CDT 8: 'a', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'VALOR INVALIDO';
+  // CDT 9: "" , "", 'VALOR INVALIDO';
+  // CDT 10: 'zzz', '', 'VALOR INVALIDO';
+  // CDT 11: '', 'ZZbbbb', 'VALOR INVALIDO'
+  // CDT 12: 'z', 'ZZ', 0;
+  // CDT 13: 'a', 'a', 1;
+  // CDT 14: '12', '523245', 2;
+  // CDT 15 'aA', 'aAAbbbb', 3;
+  // CDT 16: '%$#', '$$$', 3;
+  // CDT 17: 'sfw', 'RRRRTTTTYYY', 0;
+  // CDT 18: 'sfw' 'RRRRTTTTYYYs', 1;
+  // CDT 19: 'sfw', 'sFW', 1;
+  // CDT 20: '[]', '[Lucas]', 2;
+
+  it("should [1, 5], 1, be 3", () => {
+    expect(numJewelsInStones([1, 5], 1)).toBe("VALOR INVALIDO");
+  });
+  it('should [1,2], 2, be "VALOR INVALIDO" ', () => {
+    expect(numJewelsInStones([1, 2], 2)).toBe("VALOR INVALIDO");
+  });
+  it('should {L: 1, U:2, C:3: A:4}, A, be "VALOR INVALIDO"', () => {
+    expect(numJewelsInStones({ L: 1, U: 2, C: 3, A: 4 }, "A")).toEqual(
+      "VALOR INVALIDO"
+    );
+  });
+  it('should null, null be "VALOR INVALIDO" ', () => {
+    expect(numJewelsInStones(null, null)).toBe("VALOR INVALIDO");
+  });
+  it('should undefined, undefined be "VALOR INVALIDO" ', () => {
+    expect(numJewelsInStones(undefined, undefined)).toBe("VALOR INVALIDO");
+  });
+  it('should "aa", "AAaaAA", be "VALOR INVALIDO" ', () => {
+    expect(numJewelsInStones("aa", "AAaaAA")).toBe("VALOR INVALIDO");
+  });
+  it("should 'zz', 'ZZzzz', be 'VALOR INVALIDO' ", () => {
+    expect(numJewelsInStones("zz", "ZZzzz")).toBe("VALOR INVALIDO");
+  });
+  it("should 'a', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', be 'VALOR INVALIDO' ", () => {
+    expect(numJewelsInStones("zz", "ZZzzzz")).toBe("VALOR INVALIDO");
+  });
+  it('should "", "", be "VALOR INVALIDO" ', () => {
+    expect(numJewelsInStones()).toBe("VALOR INVALIDO");
+  });
+  it("should 'zzz', '', be 'VALOR INVALIDO' ", () => {
+    expect(numJewelsInStones("zzz", "")).toBe("VALOR INVALIDO");
+  });
+  it("should '', 'ZZbbbb', be 'VALOR INVALIDO' ", () => {
+    expect(numJewelsInStones("", "ZZbbbb")).toBe("VALOR INVALIDO");
+  });
+  it("should 'z', 'ZZ', be 0 ", () => {
+    expect(numJewelsInStones("z", "ZZ")).toBe(0);
+  });
+  it("should 'a', 'a', be 1 ", () => {
+    expect(numJewelsInStones("a", "a")).toBe(1);
+  });
+  it("should '12', '523245', be 2 ", () => {
+    expect(numJewelsInStones("12", "523245")).toBe(2);
+  });
+  it("should 'aA', 'aAAbbbb', be 3 ", () => {
+    expect(numJewelsInStones("aA", "aAAbbbb")).toBe(3);
+  });
+  it("should '%$#', '$$$', be 3 ", () => {
+    expect(numJewelsInStones("%$#", "$$$")).toBe(3);
+  });
+  it("should 'sfw', 'RRRRTTTTYYY', be 0 ", () => {
+    expect(numJewelsInStones("sfw", "RRRRTTTTYYY")).toBe(0);
+  });
+  it("should 'sfw', 'RRRRTTTTYYYs', be 1 ", () => {
+    expect(numJewelsInStones("sfw", "RRRRTTTTYYYs")).toBe(1);
+  });
+  it("should 'sfw', 'sFW', be 1 ", () => {
+    expect(numJewelsInStones("sfw", "sFW")).toBe(1);
+  });
+  it("should '[]', '[Lucas]', be 2 ", () => {
+    expect(numJewelsInStones("[]", "[Lucas]")).toBe(2);
+  });
+});
