@@ -48,6 +48,11 @@ module.exports = {
   },
   // https://leetcode.com/problems/jewels-and-stones/
   numJewelsInStones: function (J, S) {
+    if (typeof J !== "string" || typeof S !== "string") return "VALOR INVALIDO";
+    if (new Set(J).size != J.length) return "VALOR INVALIDO";
+    if (J.length === 0) return "VALOR INVALIDO";
+    if (S.length >= 50) return "VALOR INVALIDO";
+
     const resultado = [];
     for (let i = 0; i < S.length; i++) {
       if (J.includes(S[i])) {
