@@ -1,27 +1,27 @@
 const { romanToInt, shuffle, numJewelsInStones } = require("./index");
 
-// CDT 1: 'I', 1; -- analise do valor limite
-// CDT 2: 'III', 3; -- analise do valor limite
-// CDT 3: 'IV', 4; -- analise do valor limite
-// CDT 4: 'V', 5; -- analise do valor limite
-// CDT 5: '312321', 'VALOR INVALIDO'; -- error guessing
-// CDT 6: 'VIII', 8; -- analise do valor limite
-// CDT 7: 'IX', 9; -- analise do valor limite
-// CDT 8: '', 'VALOR INVALIDO'; -- analise do valor limite
-// CDT 9: '#$!@$@#', 'VALOR INVALIDO'; -- error guessing
-// CDT 10: 'XIV', 14; -- analise do valor limite
-// CDT 11: 'XV', 15; -- analise do valor limite
-// CDT 12: 'LUCAS', 'VALOR INVALIDO'; -- error guessing
-// CDT 13: 'XIX', 19; -- analise do valor limite
-// CDT 14: 'XX', 20; -- analise do valor limite
-// CDT 15: 'XXV', 25; -- analise do valor limite
-// CDT 16: 'XXIX', 29; -- analise do valor limite
-// CDT 17: 'D', 500; -- analise do valor limite
-// CDT 18: 'XL', 40; -- analise do valor limite
-// CDT 19: 'L', 50; -- analise do valor limite
-// CDT 20: 'MMMCMXCIX', 3999; -- analise do valor limite
-
 describe("romanToInt()", () => {
+  // CDT 1: 'I', 1; -- analise do valor limite
+  // CDT 2: 'III', 3; -- analise do valor limite
+  // CDT 3: 'IV', 4; -- analise do valor limite
+  // CDT 4: 'V', 5; -- analise do valor limite
+  // CDT 5: '312321', 'VALOR INVALIDO'; -- error guessing
+  // CDT 6: 'VIII', 8; -- analise do valor limite
+  // CDT 7: 'IX', 9; -- analise do valor limite
+  // CDT 8: '', 'VALOR INVALIDO'; -- analise do valor limite
+  // CDT 9: '#$!@$@#', 'VALOR INVALIDO'; -- error guessing
+  // CDT 10: 'XIV', 14; -- analise do valor limite
+  // CDT 11: 'XV', 15; -- analise do valor limite
+  // CDT 12: 'LUCAS', 'VALOR INVALIDO'; -- error guessing
+  // CDT 13: 'XIX', 19; -- analise do valor limite
+  // CDT 14: 'XX', 20; -- analise do valor limite
+  // CDT 15: 'XXV', 25; -- analise do valor limite
+  // CDT 16: 'XXIX', 29; -- analise do valor limite
+  // CDT 17: 'D', 500; -- analise do valor limite
+  // CDT 18: 'XL', 40; -- analise do valor limite
+  // CDT 19: 'L', 50; -- analise do valor limite
+  // CDT 20: 'MMMCMXCIX', 3999; -- analise do valor limite
+
   it('should "I" be 1', () => {
     expect(romanToInt("I")).toBe(1);
   });
@@ -84,28 +84,28 @@ describe("romanToInt()", () => {
   });
 });
 
-// CDT 1: ,, 'VALOR INVALIDO'; -- analise do valor limite
-// CDT 2: [1,2], 2, 'VALOR INVALIDO'; -- error guessing
-// CDT 3: [1,2,3,4], 2, [1,3,2,4]; -- particionamento de equivalencia
-// CDT 4: [1,2,3,4,6,7], 3, [1,4,2,6,3,7] -- particionamento de equivalencia
-// CDT 5: ['A','B','X','Z'], 2, ['A','X','B','Z']; -- particionamento de equivalencia
-// CDT 6: [5,2,...], 501, 'VALOR INVALIDO'; -- analise do valor limite
-// CDT 7: [],1, 'VALOR INVALIDO'; -- analise do valor limite
-// CDT 8: [],, 'VALOR INVALIDO'; -- error guessing
-// CDT 9: ['#@!#!@#'],1, '#@!#!@#';
-// CDT 10: [1,2,3,4,5,6,7,8,9,10], 5, [1,6,2,7,3,8,4,9,5,10]; -- particionamento de equivalencia
-// CDT 11: [1,"A",2,"B"], 2, [1,2,"A","B"]; -- particionamento de equivalencia
-// CDT 12: [1,2,"B","B"], 2, [1,"B",2,"B"]; -- particionamento de equivalencia
-// CDT 13: [1,2,3,"A","B","C"], 3, [1,"A",2,"B",3,"C"]; -- particionamento de equivalencia
-// CDT 14: [1,2,2,4], x, 'VALOR INVALIDO'; -- error guessing
-// CDT 15: 'LUCAS', 1, 'VALOR INVALIDO'; -- error guessing
-// CDT 16: {L: 1, U: 2, C: 3, A: 4}, 2, 'VALOR INVALIDO'; -- error guessing
-// CDT 17: ["","","",""], 2, 'VALOR INVALIDO'; -- error guessing
-// CDT 18: ['A','A','A',A'], 2, ['A','A','A','A']; -- particionamento de equivalencia
-// CDT 19: [undefined,undefined,undefined,undefined], 2, 'VALOR INVALIDO'; -- error guessing
-// CDT 20: [null, null], 1, 'VALOR INVALIDO'; -- error guessing
-
 describe("shuffle()", () => {
+  // CDT 1: ,, 'VALOR INVALIDO'; -- analise do valor limite
+  // CDT 2: [1,2], 2, 'VALOR INVALIDO'; -- error guessing
+  // CDT 3: [1,2,3,4], 2, [1,3,2,4]; -- particionamento de equivalencia
+  // CDT 4: [1,2,3,4,6,7], 3, [1,4,2,6,3,7] -- particionamento de equivalencia
+  // CDT 5: ['A','B','X','Z'], 2, ['A','X','B','Z']; -- particionamento de equivalencia
+  // CDT 6: [5,2,...], 501, 'VALOR INVALIDO'; -- analise do valor limite
+  // CDT 7: [],1, 'VALOR INVALIDO'; -- analise do valor limite
+  // CDT 8: [],, 'VALOR INVALIDO'; -- error guessing
+  // CDT 9: ['#@!#!@#'],1, '#@!#!@#';
+  // CDT 10: [1,2,3,4,5,6,7,8,9,10], 5, [1,6,2,7,3,8,4,9,5,10]; -- particionamento de equivalencia
+  // CDT 11: [1,"A",2,"B"], 2, [1,2,"A","B"]; -- particionamento de equivalencia
+  // CDT 12: [1,2,"B","B"], 2, [1,"B",2,"B"]; -- particionamento de equivalencia
+  // CDT 13: [1,2,3,"A","B","C"], 3, [1,"A",2,"B",3,"C"]; -- particionamento de equivalencia
+  // CDT 14: [1,2,2,4], x, 'VALOR INVALIDO'; -- error guessing
+  // CDT 15: 'LUCAS', 1, 'VALOR INVALIDO'; -- error guessing
+  // CDT 16: {L: 1, U: 2, C: 3, A: 4}, 2, 'VALOR INVALIDO'; -- error guessing
+  // CDT 17: ["","","",""], 2, 'VALOR INVALIDO'; -- error guessing
+  // CDT 18: ['A','A','A',A'], 2, ['A','A','A','A']; -- particionamento de equivalencia
+  // CDT 19: [undefined,undefined,undefined,undefined], 2, 'VALOR INVALIDO'; -- error guessing
+  // CDT 20: [null, null], 1, 'VALOR INVALIDO'; -- error guessing
+
   it('should "", "", be "VALOR INVALIDO" ', () => {
     expect(shuffle()).toBe("VALOR INVALIDO");
   });
@@ -178,26 +178,3 @@ describe("shuffle()", () => {
     expect(shuffle([null, null], 1)).toBe("VALOR INVALIDO");
   });
 });
-
-// CDT 1:
-// CDT 2:
-// CDT 3:
-// CDT 4:
-// CDT 5:
-// CDT 6:
-// CDT 7:
-// CDT 8:
-// CDT 9:
-// CDT 10:
-// CDT 11:
-// CDT 12:
-// CDT 13:
-// CDT 14:
-// CDT 15:
-// CDT 16:
-// CDT 17:
-// CDT 18:
-// CDT 19:
-// CDT 20:
-
-describe("numJewelsInStones()", () => {});
