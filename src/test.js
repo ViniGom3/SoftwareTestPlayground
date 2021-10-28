@@ -138,7 +138,8 @@ describe("shuffle()", () => {
     expect(shuffle(["A", "B", "X", "Z"], 2)).toEqual(["A", "X", "B", "Z"]);
   });
   it("should [5,2,...], 501, be 'VALOR INVALIDO' ", () => {
-    expect(shuffle([5, 2, 3, 4, 6, 7], 501)).toBe("VALOR INVALIDO");
+    const array = Array.from({ length: 1002 }).map((value, index) => index);
+    expect(shuffle(array, 501)).toBe("VALOR INVALIDO");
   });
   it("should [],1, be 'VALOR INVALIDO' ", () => {
     expect(shuffle([], 1)).toMatch(/invalido/i);
